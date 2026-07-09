@@ -236,21 +236,27 @@
           <h2>Ready to get your books organized?</h2>
           <p>Send a message to request a consultation and describe the bookkeeping support your business needs.</p>
         </div>
-        <form class="contact-form" action="mailto:info@nexosbookkeeping.com" method="post" enctype="text/plain">
+
+        <form class="contact-form" action="https://formspree.io/f/meebbgje" method="POST">
           <label>
             Name
-            <input name="name" type="text" placeholder="Your name">
+            <input name="name" type="text" placeholder="Your name" required>
           </label>
           <label>
             Email
-            <input name="email" type="email" placeholder="you@example.com">
+            <input name="email" type="email" placeholder="you@example.com" required>
           </label>
           <label>
             Message
-            <textarea name="message" rows="5" placeholder="Tell us about your bookkeeping needs"></textarea>
+            <textarea name="message" rows="5" placeholder="Tell us about your bookkeeping needs" required></textarea>
           </label>
+
+          <input type="hidden" name="_subject" value="New website inquiry from Nexos Bookkeeping">
           <button class="button primary full" type="submit">Send message</button>
-          <p class="form-note">Prefer email? Write to <a href="mailto:info@nexosbookkeeping.com">info@nexosbookkeeping.com</a></p>
+
+          <p class="form-note">
+            Prefer email? Write to <a href="mailto:info@nexosbookkeeping.com">info@nexosbookkeeping.com</a>
+          </p>
         </form>
       </div>
     </section>
