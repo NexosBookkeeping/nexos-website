@@ -294,6 +294,52 @@
     </div>
   </footer>
 
+  <script>
+const form = document.getElementById("contactForm");
+const button = document.getElementById("contactSubmit");
+const status = document.getElementById("formStatus");
+
+if (form) {
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    button.disabled = true;
+    button.textContent = "Sending...";
+    status.textContent = "";
+    status.className = "form-status";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        status.textContent = "✓ Thank you! Your message has been sent successfully.";
+        status.classList.add("success");
+        button.textContent = "Message sent";
+
+        setTimeout(() => {
+          button.disabled = false;
+          button.textContent = "Send message";
+        }, 2500);
+      } else {
+        throw new Error();
+      }
+    } catch {
+      status.textContent = "Something went wrong. Please email info@nexosbookkeeping.com.";
+      status.classList.add("error");
+      button.disabled = false;
+      button.textContent = "Send message";
+    }
+  });
+}
+</script>
+
   <script src="script.js"></script>
 </body>
 </html>
