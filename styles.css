@@ -175,3 +175,24 @@ footer{background:#fbfcfe;border-top:1px solid var(--line);padding:50px 0 28px}
   .section,.contact-section{padding:66px 0}
   h1{font-size:clamp(2.55rem,13vw,4.1rem)}
 }
+/* Form submission status */
+.form-status {
+  min-height: 22px;
+  margin: 12px 0 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.form-status.success {
+  color: #2f7d32;
+}
+
+.form-status.error {
+  color: #b42318;
+}
+
+.contact-form button:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  transform: none;
+}
